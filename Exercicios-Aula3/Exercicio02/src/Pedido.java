@@ -19,6 +19,11 @@ public class Pedido {
         total += prato.getPreco();
     }
 
+    public void removerPrato(Prato prato){
+        itensEscolhidos.remove(prato);
+        total -= prato.getPreco();
+    }
+
     public void exibirDetalhes(){
         System.out.println("--- Detalhes do Pedido ---");
         System.out.println("Numero do pedido: " + numeroPedido);

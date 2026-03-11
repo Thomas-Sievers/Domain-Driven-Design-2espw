@@ -21,6 +21,7 @@ public class Main {
 
         meuPedido.exibirDetalhes();
 
-        cardapio.removeIf(prato -> prato.getNome().equalsIgnoreCase(removerPrato));
+        meuPedido.removerPrato(prato2);
+        meuPedido.exibirDetalhes();
     }
 }
