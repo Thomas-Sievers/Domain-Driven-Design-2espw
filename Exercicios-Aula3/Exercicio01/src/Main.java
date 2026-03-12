@@ -1,13 +1,35 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class Main {
     static void main() {
-        Livro livro1 = new Livro("O último reino", "Bernard Cornwell", 123);
+        Scanner scanner =  new Scanner(System.in);
+
+        String removeLivro;
+        String devolveLivro;
+
+        List<Livro> biblioteca = new ArrayList<>();
+        List<Emprestimo> emprestimos = new ArrayList<>();
+
         Membro membro1 = new Membro("Thomas", 1, "email@gmail.com");
-        Emprestimo emprestimo1 = new Emprestimo("O último reino", "Thomas", "03/11/2026");
 
-        System.out.println("Depois que você adicionou, temos " + livro1.adicionarEstoque(10) + " deste livro no nosso estoque.");
-        System.out.println("Depois que você retirou, temos " + livro1.removerEstoque(5) + " deste livro no nosso estoque.");
+        biblioteca.add(new Livro("O último reino", "Bernard Cornwell", 1));
+        biblioteca.add(new Livro("Comece pelo porque", "Simon Sinked", 2));
 
-        emprestimo1.devolverEmprestimo("O último reino", "Thomas");
+        emprestimos.add(new Emprestimo("O último reino", membro1.getNome(), "11/03/2026"));
+
+        System.out.println("Digite o nome do livro que quer remover: ");
+        removeLivro = scanner.nextLine();
+
+        biblioteca.removeIf(livro -> livro.getTitulo().equalsIgnoreCase(removeLivro));
+
+        System.out.println("Digite o nome do livro que quer devolver: ");
+        devolveLivro = scanner.nextLine();
+
+        emprestimos.removeIf(emprestimo -> emprestimo.getLivro().equalsIgnoreCase(devolveLivro));
+
+
 
     }
 }

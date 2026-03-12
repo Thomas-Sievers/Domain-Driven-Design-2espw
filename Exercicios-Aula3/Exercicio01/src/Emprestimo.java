@@ -3,13 +3,33 @@ public class Emprestimo {
     private String membro;
     private String dataEmprestimo;
 
+    public String getLivro() {
+        return livro;
+    }
+
+    public void setLivro(String livro) {
+        this.livro = livro;
+    }
+
+    public String getMembro() {
+        return membro;
+    }
+
+    public void setMembro(String membro) {
+        this.membro = membro;
+    }
+
+    public String getDataEmprestimo() {
+        return dataEmprestimo;
+    }
+
+    public void setDataEmprestimo(String dataEmprestimo) {
+        this.dataEmprestimo = dataEmprestimo;
+    }
+
     public Emprestimo(String livro, String membro, String dataEmprestimo){
         this.livro = livro;
         this.membro = membro;
         this.dataEmprestimo = dataEmprestimo;
-    }
-
-    public void devolverEmprestimo(String livro, String membro){
-        System.out.println("Você devolveu seu livro!");
     }
 }
