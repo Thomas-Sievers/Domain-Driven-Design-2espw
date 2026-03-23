@@ -6,19 +6,38 @@ public class Livro {
     private String autor;
     private int ISBN;
 
-    List<Livro> biblioteca = new ArrayList<>();
-
     public Livro(String titulo, String autor, int ISBN){
         this.titulo = titulo;
         this.autor = autor;
         this.ISBN = ISBN;
     }
 
-    public void adicionarLivroBiblioteca(Livro livro){
-        biblioteca.add(livro);
+    @Override
+    public String toString(){
+        return "Titulo: " + this.titulo + "| Autor: " + this.autor + "| ISBN: " + this.ISBN;
     }
 
-    public void removerLivroBiblioteca(Livro livro){
-        biblioteca.remove(livro);
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public int getISBN() {
+        return ISBN;
+    }
+
+    public void setISBN(int ISBN) {
+        this.ISBN = ISBN;
     }
 }
