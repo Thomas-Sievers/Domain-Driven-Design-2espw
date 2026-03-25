@@ -3,7 +3,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class SistemaBiblioteca {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Biblioteca biblioteca = new Biblioteca();
         int escolha = 0;
